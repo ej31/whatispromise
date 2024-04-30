@@ -1,3 +1,29 @@
+
+# 비동기는.. 분신술 닌자다.. 🥷🥷🥷
+```mermaid
+sequenceDiagram
+    participant MN as 🥷 메인 닌자
+    participant CS as 🥷 분신: fetchData
+    participant NW as 네트워크
+    participant JS as JSON 파싱
+
+    MN->>+CS: 분신술 발동 (fetchData 호출)
+    Note right of MN: 🥷 메인 닌자가 분신의 결과를 기다림
+    CS->>+NW: 은밀한 데이터 요청 (fetch)
+    Note over NW: 네트워크가 응답을 처리함
+    NW-->>-CS: 응답 도착
+    CS->>+JS: 응답을 JSON으로 변환
+    JS-->>-CS: JSON 데이터 준비 완료
+    CS-->>-MN: 데이터 반환
+    Note right of MN: 🥷 메인 닌자가 응답을 받고 활동 재개
+    MN->>MN: 데이터 처리 또는 오류 대응
+    Note over MN: 결과를 사용하거나 오류를 로깅
+```
+
+> 다이어그램에서 세로 라인 중 두꺼운 부분은 호출한 부분에서 응답을 기다린다는 뜻입니다. :ninja:
+
+## 다이어그램에서 사용 된 코드
+
 ```html
 <!doctype html>
 <html lang="en">
@@ -43,24 +69,3 @@
 </html>
 ```
 
-```mermaid
-sequenceDiagram
-    participant MN as 🥷 메인 닌자
-    participant CS as 🥷 분신: fetchData
-    participant NW as 네트워크
-    participant JS as JSON 파싱
-
-    MN->>+CS: 분신술 발동 (fetchData 호출)
-    Note right of MN: 🥷 메인 닌자가 분신의 결과를 기다림
-    CS->>+NW: 은밀한 데이터 요청 (fetch)
-    Note over NW: 네트워크가 응답을 처리함
-    NW-->>-CS: 응답 도착
-    CS->>+JS: 응답을 JSON으로 변환
-    JS-->>-CS: JSON 데이터 준비 완료
-    CS-->>-MN: 데이터 반환
-    Note right of MN: 🥷 메인 닌자가 응답을 받고 활동 재개
-    MN->>MN: 데이터 처리 또는 오류 대응
-    Note over MN: 결과를 사용하거나 오류를 로깅
-```
-## 참고 사항
-- 다이어그램에서 세로 라인 중 두꺼운 부분은 호출한 부분에서 응답을 기다린다는 뜻입니다. :ninja:
